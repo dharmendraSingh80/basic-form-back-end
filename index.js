@@ -6,7 +6,7 @@ const app = express();
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
 app.use(cors());
-const userRoutes = require("./routes/users.js");
+const userRoutes = require("./Routes/users.js");
 app.use("/user", userRoutes);
 app.get("/", (req, res) => {
   res.send("Hello");
