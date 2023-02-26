@@ -5,7 +5,9 @@ const cors = require("cors");
 const app = express();
 app.use(express.json({ limit: "30mb", extended: true }));
 app.use(express.urlencoded({ limit: "30mb", extended: true }));
-app.use(cors());
+app.use(cors({
+    origin: ["http://localhost:3000/", "https://basic-form.onrender.com"],
+  }));
 const userRoutes = require("./Routes/users.js");
 app.use("/user", userRoutes);
 app.get("/", (req, res) => {
